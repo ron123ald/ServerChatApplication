@@ -1,10 +1,10 @@
 ﻿namespace ServerChatApplication.Server.Chat
 {
     using System;
-using System.ComponentModel;
-using System.Net;
-using System.Net.Sockets;
-using ServerChatApplication.Server.ChatEvents;
+    using System.ComponentModel;
+    using System.Net;
+    using System.Net.Sockets;
+    using ServerChatApplication.Server.ChatEvents;
     public class ChatConnection : IDisposable
     {
         private IPAddress _address = IPAddress.Any;
