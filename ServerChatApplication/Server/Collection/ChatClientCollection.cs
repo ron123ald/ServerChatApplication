@@ -49,6 +49,11 @@
             return handler;
         }
 
+        public IDictionary<int, ChatClientHandler> Get()
+        {
+            return this._collection;
+        }
+
         private bool ContainsKey(int hashCode)
         {
             return this._collection.ContainsKey(hashCode);

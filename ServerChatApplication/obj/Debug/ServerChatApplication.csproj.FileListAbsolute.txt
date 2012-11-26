@@ -5,3 +5,8 @@ D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\obj\Debug\Serv
 D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\obj\Debug\Server Chat.pdb
 D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.exe.config
 D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\obj\Debug\ServerChatApplication.csprojResolveAssemblyReference.cache
+C:\Users\Glenn.CEBU\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.exe.config
+C:\Users\Glenn.CEBU\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.exe
+C:\Users\Glenn.CEBU\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.pdb
+C:\Users\Glenn.CEBU\ServerChatApplication\ServerChatApplication\obj\Debug\Server Chat.exe
+C:\Users\Glenn.CEBU\ServerChatApplication\ServerChatApplication\obj\Debug\Server Chat.pdb

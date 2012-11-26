@@ -55,6 +55,8 @@
     <Compile Include="Server\ChatEvents\StartEventArgs.cs" />
     <Compile Include="Server\ChatEvents\StopEventArgs.cs" />
     <Compile Include="Server\ChatUtility.cs" />
+    <Compile Include="Server\Chat\Action\ChatAction.cs" />
+    <Compile Include="Server\Chat\Action\NewUserAction.cs" />
     <Compile Include="Server\Chat\ChatConnection.cs" />
     <Compile Include="Server\Chat\ChatManager.cs" />
     <Compile Include="Server\Chat\ChatUser.cs" />
@@ -62,7 +64,6 @@
     <Compile Include="Server\Collection\ChatClientCollection.cs" />
     <Compile Include="Server\IChatService.cs" />
     <Compile Include="Server\Logger.cs" />
-    <Compile Include="Server\Process\ChatProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChatServer.txt" />
