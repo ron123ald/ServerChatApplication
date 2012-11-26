@@ -7,6 +7,7 @@
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using ServerChatApplication.Server.Chat;
+    using ServerChatApplication.Server.Chat.Action;
     using ServerChatApplication.Server.ChatEvents;
 
     public class ChatClientHandler : ChatUser, IDisposable
@@ -21,6 +22,7 @@
         public event LogEventHandler LogEvent;
         public event SendMessageEventHandler SendMessageEvent;
         public event LeaveEventHandler LeaveEvent;
+        public event NewUserEventHandler NewUserEvent;
 
         public ChatClientHandler(NewEventArgs args)
         {
@@ -46,7 +48,6 @@
                 
                 /// this will hold the data that recieved from the stream.
                 string dataRecieved = string.Empty;
-                WriteLine("***** WELCOME *****");
 
                 while (true)
                 {
@@ -63,7 +64,8 @@
                                 processUserDetails(dataRecieved);
                                 /// log event to console
                                 this.LogEvent(this, new LogEventArgs(string.Format("Client \"{0}\" connected in server [ {1} ]", this.Username, this.UserUniqueID)));
-                                /// notify other users
+                                /// set new user event payload
+                                this.NewUserEvent(this, new NewUserEventArgs(this.Username, this.UserUniqueID));
 
                                 break;
                             case ChatActionTypes.leave:
@@ -71,7 +73,6 @@
                                 this.LeaveEvent(this, new LeaveEventArgs(this.Username, this.UserUniqueID));
                                 /// log event to console
                                 this.LogEvent(this, new LogEventArgs(string.Format("Client \"{0}\" disconnected from server [ {1} ]", this.Username, this.UserUniqueID)));
-                                /// notify other users
                                 
                                 break;
                             case ChatActionTypes.send:
