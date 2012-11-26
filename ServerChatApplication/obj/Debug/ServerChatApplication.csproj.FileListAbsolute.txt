@@ -1,0 +1,7 @@
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.exe
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.pdb
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\bin\Debug\Newtonsoft.Json.dll
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\obj\Debug\Server Chat.exe
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\obj\Debug\Server Chat.pdb
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\bin\Debug\Server Chat.exe.config
+D:\Development\_SPIKE\ServerChatApplication\ServerChatApplication\obj\Debug\ServerChatApplication.csprojResolveAssemblyReference.cache

@@ -1,0 +1,25 @@
+﻿NOTES
+
+
+Join (ChatActionTypes.join)
+{
+	"Action": "join",
+	"Username": "",
+	"UserUniqueID": "",
+	"CreateDate": ""
+}
+
+SendMessage (ChatActionTypes.send)
+{
+	"Action": "send",
+	"From": "",
+	"To": "",
+	"Message": ""
+}
+
+Leave (ChatActionTypes.leave)
+{
+	"Action": "leave",
+	"Username": "",
+	"UserUniqueID": "",
+}
