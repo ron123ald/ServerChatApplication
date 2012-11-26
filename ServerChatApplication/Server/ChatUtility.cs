@@ -26,7 +26,6 @@
                     default: break;
                 }
             }
-                //type = JsonConvert.DeserializeObject<ChatActionTypes>((string)actionDetails["Action"]);
             return type;
         }
 

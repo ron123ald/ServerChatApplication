@@ -63,6 +63,7 @@
                                 processUserDetails(dataRecieved);
                                 /// log event to console
                                 this.LogEvent(this, new LogEventArgs(string.Format("Client \"{0}\" connected in server [ {1} ]", this.Username, this.UserUniqueID)));
+                                /// notify other users
 
                                 break;
                             case ChatActionTypes.leave:
@@ -70,7 +71,8 @@
                                 this.LeaveEvent(this, new LeaveEventArgs(this.Username, this.UserUniqueID));
                                 /// log event to console
                                 this.LogEvent(this, new LogEventArgs(string.Format("Client \"{0}\" disconnected from server [ {1} ]", this.Username, this.UserUniqueID)));
-
+                                /// notify other users
+                                
                                 break;
                             case ChatActionTypes.send:
 
