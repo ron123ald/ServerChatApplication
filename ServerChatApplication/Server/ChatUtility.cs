@@ -1,9 +1,13 @@
 ﻿namespace ServerChatApplication.Server
 {
     using System;
+    using System.Collections.Generic;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using ServerChatApplication.Server.Chat.Action;
     using ServerChatApplication.Server.ChatEvents;
+    using ServerChatApplication.Server.Client;
+    using ServerChatApplication.Server.Collection;
     public static class ChatUtility
     {
         public static ChatActionTypes GetActionType(this string dataRecieved)
@@ -40,6 +44,14 @@
             }
             catch { }
             return e;
+        }
+
+        public static void NotifyOtherUsers(this NewUserEventArgs action)
+        {
+            /// get all in users list and send new UserEvent to it
+            IDictionary<int, ChatClientHandler> userHandlers = (ChatClientCollection.InstanceContext).Get();
+            foreach (var item in userHandlers)
+                (item.Value).WriteLine(action.ToString());
         }
     }
 }

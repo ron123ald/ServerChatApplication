@@ -37,13 +37,20 @@
         private void connectionJoinEvent(object sender, ChatEvents.NewEventArgs e)
         {
             Client.ChatClientHandler handler = new Client.ChatClientHandler(e);
-            handler.LeaveEvent += handler_LeaveEvent;
-            handler.SendMessageEvent += handler_SendMessageEvent;
+            handler.LeaveEvent += handlerLeaveEvent;
+            handler.SendMessageEvent += handlerSendMessageEvent;
             handler.LogEvent += handlerLogEvent;
+            handler.NewUserEvent += handlerNewUserEvent;
             this._collection.Add(handler);
         }
 
         #region Handler
+
+        private void handlerNewUserEvent(object sender, Action.NewUserEventArgs e)
+        {
+            System.Action action = (() => e.NotifyOtherUsers());
+            action.Invoke();
+        }
 
         /// <summary>
         /// e.From = sender
@@ -52,7 +59,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void handler_SendMessageEvent(object sender, ChatEvents.SendMessageEventArgs e)
+        private void handlerSendMessageEvent(object sender, ChatEvents.SendMessageEventArgs e)
         {
             if (e != null)
             {
@@ -64,7 +71,7 @@
             }
         }
 
-        private void handler_LeaveEvent(object sender, ChatEvents.LeaveEventArgs e)
+        private void handlerLeaveEvent(object sender, ChatEvents.LeaveEventArgs e)
         {
             /// get handler in Collections, remove and dispose
             Client.ChatClientHandler handler = this._collection.Get(e.UserUniqueID);
